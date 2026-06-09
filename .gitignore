@@ -19,3 +19,7 @@ pnpm-debug.log*
 # Environment (keep env.json as a placeholder template; ignore real secrets)
 .env
 .env.*
+
+# Database dumps — contain personal data, never commit
+*.sql
+databasedump*.sql
