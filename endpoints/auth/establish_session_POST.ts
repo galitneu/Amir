@@ -18,24 +18,37 @@ async function makeSessionResponse(user: any) {
 export async function handle(request: Request) {
   try {
     const json = await request.json();
-    const { tempToken, email, password } = schema.parse(json);
+    const { tempToken, email, password, currentPassword, newPassword } = schema.parse(json);
     const invalid = () => Response.json({ error: "Invalid email or password" }, { status: 401 });
-    if (email && password) {
-      const normalizedEmail = email.toLowerCase().trim();
-      const user = await db.selectFrom("users").selectAll().where("email", "=", normalizedEmail).executeTakeFirst();
-      if (!user) { return invalid(); }
-      const existing = await db.selectFrom("user_passwords").selectAll().where("user_id", "=", user.id).executeTakeFirst();
-      if (!existing) {
-        if (user.role !== "admin") { return invalid(); }
-        const hash = await bcrypt.hash(password, 10);
-        await db.insertInto("user_passwords").values({ user_id: user.id, password_hash: hash, created_at: new Date(), updated_at: new Date() }).execute();
-      } else {
-        const ok = await bcrypt.compare(password, existing.password_hash);
-        if (!ok) { return invalid(); }
-      }
-      return await makeSessionResponse(user);
+
+  if (email && currentPassword && newPassword) {
+    const user = await db.selectFrom("users").selectAll().where("email", "=", email.toLowerCase().trim()).executeTakeFirst();
+    if (!user) { return invalid(); }
+    const existing = await db.selectFrom("user_passwords").selectAll().where("user_id", "=", user.id).executeTakeFirst();
+    if (!existing) { return invalid(); }
+    const ok = await bcrypt.compare(currentPassword, existing.password_hash);
+    if (!ok) { return invalid(); }
+    const hash = await bcrypt.hash(newPassword, 10);
+    await db.updateTable("user_passwords").set({ password_hash: hash, updated_at: new Date() }).where("user_id", "=", user.id).execute();
+    return Response.json({ success: true, changed: true });
+  }
+
+  if (email && password) {
+    const user = await db.selectFrom("users").selectAll().where("email", "=", email.toLowerCase().trim()).executeTakeFirst();
+    if (!user) { return invalid(); }
+    const existing = await db.selectFrom("user_passwords").selectAll().where("user_id", "=", user.id).executeTakeFirst();
+    if (!existing) {
+      if (user.role !== "admin") { return invalid(); }
+      const hash = await bcrypt.hash(password, 10);
+      await db.insertInto("user_passwords").values({ user_id: user.id, password_hash: hash, created_at: new Date(), updated_at: new Date() }).execute();
+    } else {
+      const ok = await bcrypt.compare(password, existing.password_hash);
+      if (!ok) { return invalid(); }
     }
-    if (!tempToken) { return Response.json({ error: "Invalid request" }, { status: 400 }); }
+    return await makeSessionResponse(user);
+  }
+
+  if (!tempToken) { return Response.json({ error: "Invalid request" }, { status: 400 }); }
     const tempSession = await db.selectFrom("sessions").selectAll().where("id", "=", tempToken).limit(1).executeTakeFirst();
     if (!tempSession) { return Response.json({ error: "Invalid or expired token" }, { status: 400 }); }
     const now = new Date();
