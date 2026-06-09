@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  direction: rtl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--animation-duration-fast) ease, transform var(--animation-duration-fast) ease;
+}
+
+.item:hover {
+  border-color: var(--secondary);
+}
+
+.dragHandle {
+  cursor: grab;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.itemContent {
+  flex-grow: 1;
+}
+
+.itemTitle {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.deleteButton:hover {
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 15%, transparent);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--muted-foreground);
+  background-color: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-lg);
+}
+
+.dragging {
+  background-color: var(--card);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-content);
+  transform: scale(1.02);
+}

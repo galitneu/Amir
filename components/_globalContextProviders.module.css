@@ -1,0 +1,19 @@
+.appLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+.mainContent {
+  flex: 1;
+  padding-top: var(--spacing-4); /* Space below the sticky navigation */
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 767px) {
+  .mainContent {
+    padding-top: var(--spacing-3);
+  }
+}
+

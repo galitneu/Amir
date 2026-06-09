@@ -1,0 +1,225 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Heebo:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Assistant:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+
+
+:root {
+  /* Content layers */
+  --z-content-low: 10; /* Minor elevated content */
+  --z-content: 20; /* Standard elevated content */
+  --z-content-high: 30; /* Important content that needs prominence */
+
+  /* Navigation layers */
+  --z-nav-low: 100; /* Secondary navigation components */
+  --z-nav: 200; /* Primary navigation bars */
+  --z-nav-sticky: 300; /* Sticky navigation elements */
+
+  /* Overlay layers */
+  --z-overlay: 400;
+
+  --z-spotlight: 1000; /* Tutorial spotlights/guided help */
+
+  /* System layers */
+  --z-critical: 2000; /* Critical system notifications */
+
+  /* spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+
+  /* Light Mode: Warm, elegant Hebrew-friendly memorial theme */
+  
+  /* Base Colors */
+  --background: #FDF6EC; /* Gentle cream background */
+  --foreground: #333333; /* Dark gray primary text */
+
+  /* Surface Colors (for containers slightly above the background) */
+  --surface: #FEFAF2; /* Slightly lighter cream for cards */
+  --surface-foreground: #333333;
+
+  /* Component-specific Colors */
+  --sidebar: #F9F0E0;
+  --sidebar-foreground: #2C3E50;
+  --card: #FFFFFF;
+  --card-foreground: #333333;
+  --popup: #FFFFFF;
+  --popup-foreground: #333333;
+
+  /* Accent & Action Colors */
+  --primary: #2C3E50; /* Deep navy for headings and links */
+  --primary-foreground: #FFFFFF;
+  --secondary: #C49E6C; /* Warm gold for buttons and highlights */
+  --secondary-foreground: #FFFFFF;
+  --accent: #C49E6C; /* Warm gold for accents */
+  --accent-foreground: #FFFFFF;
+  --muted: #F0E6D6; /* Subtle beige for muted elements */
+  --muted-foreground: #666666; /* Medium gray for secondary text */
+  --heading-color: #5C4327; /* Uniform brown for all headings */
+
+  /* Semantic Colors */
+  --success: hsl(140, 40%, 45%);
+  --success-foreground: hsl(140, 40%, 98%);
+  --error: hsl(0, 60%, 50%);
+  --error-foreground: hsl(0, 60%, 98%);
+  --warning: hsl(38, 70%, 55%);
+  --warning-foreground: hsl(38, 70%, 10%);
+  --info: hsl(200, 50%, 50%);
+  --info-foreground: hsl(200, 50%, 98%);
+  --info-hover: hsl(200, 50%, 60%);
+  --info-active: hsl(200, 50%, 40%);
+
+  /* Borders */
+  --border: #E8D5C4;
+
+  /* Font Families - Hebrew-friendly with fallbacks */
+  --font-family-base: 'Heebo', 'Assistant', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-family-heading: 'Heebo', 'Assistant', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-cursive: 'cursive';
+
+  /* Typography Scale */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.75rem; /* 28px */
+  --font-size-4xl: 2rem; /* 32px */
+  --line-height-base: 1.6;
+  --line-height-tight: 1.5;
+
+  /* Border Radius and Box Shadows */
+  --shadow: 0 2px 4px 0 rgba(44, 62, 80, 0.08);
+  --shadow-md: 0 4px 8px -1px rgba(44, 62, 80, 0.1), 0 2px 4px -2px rgba(44, 62, 80, 0.06);
+  --shadow-lg: 0 8px 16px -3px rgba(44, 62, 80, 0.12), 0 4px 8px -4px rgba(44, 62, 80, 0.08);
+  --shadow-focus: 0 0 0 2px #FDF6EC, 0 0 0 4px #C49E6C;
+
+  --radius-sm: 0.375rem; /* 6px - softer corners */
+  --radius: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-full: 9999px; 
+
+  /* Animation - gentle transitions */
+  --animation-duration-fast: 200ms;
+  --animation-duration-normal: 400ms;
+  --animation-duration-slow: 500ms;
+
+  /* Chart Colors (harmonious with the palette) */
+  --chart-color-1: #C49E6C;
+  --chart-color-2: #2C3E50;
+  --chart-color-3: #D4B886;
+  --chart-color-4: #4A5F7A;
+  --chart-color-5: #B8956A;
+}
+
+.dark {
+  /* Dark Mode: Deep, contemplative theme with same color harmony */
+
+  /* Base Colors */
+  --background: #1A1F2E; /* Deep navy background */
+  --foreground: #E8E3D8; /* Warm light text */
+
+  /* Surface Colors */
+  --surface: #242938; /* Slightly lighter navy */
+  --surface-foreground: #E8E3D8;
+
+  /* Component-specific Colors */
+  --sidebar: #1F2433;
+  --sidebar-foreground: #D4B886;
+  --card: #2A2F3E;
+  --card-foreground: #E8E3D8;
+  --popup: #2A2F3E;
+  --popup-foreground: #E8E3D8;
+
+  /* Accent & Action Colors */
+  --primary: #4A90A4; /* Lighter navy-blue for contrast */
+  --primary-foreground: #FFFFFF;
+  --secondary: #D4B886; /* Lighter warm gold */
+  --secondary-foreground: #1A1F2E;
+  --accent: #D4B886;
+  --accent-foreground: #1A1F2E;
+  --muted: #2F3441;
+  --muted-foreground: #9B9B9B;
+  --heading-color: #D4A574; /* Lighter brown for dark mode headings */
+
+  /* Semantic Colors */
+  --success: hsl(140, 40%, 55%);
+  --success-foreground: hsl(140, 40%, 10%);
+  --error: hsl(0, 65%, 65%);
+  --error-foreground: hsl(0, 65%, 10%);
+  --warning: hsl(38, 70%, 65%);
+  --warning-foreground: hsl(38, 70%, 10%);
+  --info: hsl(200, 55%, 65%);
+  --info-foreground: hsl(200, 55%, 10%);
+  --info-hover: hsl(200, 55%, 75%);
+  --info-active: hsl(200, 55%, 55%);
+
+  /* Borders */
+  --border: #3A3F4E;
+
+  /* Shadows */
+  --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px -3px rgba(0, 0, 0, 0.25), 0 4px 8px -4px rgba(0, 0, 0, 0.15);
+  --shadow-focus: 0 0 0 2px #1A1F2E, 0 0 0 4px #D4B886;
+
+  /* Chart Colors (adjusted for dark mode) */
+  --chart-color-1: #D4B886;
+  --chart-color-2: #4A90A4;
+  --chart-color-3: #E6C999;
+  --chart-color-4: #5BA0B7;
+  --chart-color-5: #C8A876;
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--font-family-heading);
+}
+@layer base {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-family-base);
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  th, td {
+    display: table-cell!important;
+  }
+}
+.rbc-month-view {
+  overflow: visible !important;
+}

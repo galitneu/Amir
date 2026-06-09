@@ -1,0 +1,28 @@
+/* The base Dialog component is used, so we only need to override or add specific styles */
+.lightboxContent {
+  background-color: #FFFFFF;
+  padding: 32px;
+  border-radius: 8px;
+  max-width: 90vw;
+  width: 48rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Override the close button position for a better fit with larger content */
+.lightboxContent :global(.Dialog-module__close) {
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  width: 24px;
+  height: 24px;
+  color: #333333;
+  /* In RTL, right is correct */
+}

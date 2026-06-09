@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 48px - var(--spacing-8) - var(--spacing-12)); /* viewport - header - top padding - bottom margin of guestbook */
+  padding: var(--spacing-8);
+  text-align: center;
+  direction: rtl;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comingSoonText {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: 300;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 768px) {
+  .comingSoonText {
+    font-size: 3.5rem; /* 56px */
+  }
+}

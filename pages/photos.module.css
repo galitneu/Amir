@@ -1,0 +1,284 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FDF8F0;
+  color: var(--foreground);
+  direction: rtl;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-4);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  margin: 0 0 var(--spacing-3) 0;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-12);
+}
+
+.galleryContainer {
+  width: 100%;
+}
+
+.gridContainer {
+  width: 100%;
+  position: relative;
+}
+
+.photoCard {
+  width: calc(25% - 12px);
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--animation-duration-normal) ease, box-shadow var(--animation-duration-normal) ease;
+  background: white;
+}
+
+.photoButton {
+  position: relative;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.photoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.photoCard:hover .photoOverlay {
+  opacity: 1;
+}
+
+.photoImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--animation-duration-slow) ease;
+  display: block;
+}
+
+.photoCard:hover .photoImg {
+  transform: scale(1.02);
+}
+
+.fadeIn {
+  animation: fadeInUp var(--animation-duration-slow) ease-out;
+}
+
+/* Smooth scroll behavior for the page */
+.page {
+  scroll-behavior: smooth;
+}
+
+.photoOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  color: white;
+  padding: var(--spacing-4) var(--spacing-3) var(--spacing-2);
+  opacity: 0;
+  transition: opacity var(--animation-duration-normal) ease;
+  text-align: center;
+}
+
+.photoOverlay p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.photoSkeleton {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-md);
+}
+
+.errorMessage {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--error);
+  font-family: var(--font-family-base);
+}
+
+.errorMessage p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--muted-foreground);
+  font-family: var(--font-family-base);
+}
+
+.emptyMessage p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Design for Masonry */
+@media (min-width: 1200px) {
+  .photoCard {
+    width: calc(20% - 12.8px); /* 5 columns */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .photoCard {
+    width: calc(25% - 12px); /* 4 columns */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .photoCard {
+    width: calc(33.333% - 10.67px); /* 3 columns */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .photoCard {
+    width: calc(50% - 8px); /* 2 columns */
+  }
+}
+
+@media (max-width: 575px) {
+  .photoCard {
+    width: calc(50% - 8px); /* 2 columns */
+  }
+  
+  .main {
+    padding: var(--spacing-6) var(--spacing-3);
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+/* Lightbox / Dialog styles */
+.dialogOverlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  animation: fadeIn var(--animation-duration-fast) ease-out;
+}
+
+.dialogContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-spotlight);
+  width: 90vw;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: contentShow var(--animation-duration-normal) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: calc(90vh - 60px);
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightboxCaption {
+  color: white;
+  margin-top: var(--spacing-4);
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--animation-duration-fast) ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentShow {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-12);
+}
+
+.guestbookSection {
+  margin-top: var(--spacing-16);
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-8);
+}

@@ -1,0 +1,112 @@
+.container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  max-width: 720px;
+  margin: var(--spacing-8) auto;
+  font-family: var(--font-family-base);
+}
+
+.header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.header h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.header p {
+  font-size: var(--font-size-lg);
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-1);
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.dateFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.contentTabs {
+  margin-top: var(--spacing-4);
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding-top: var(--spacing-4);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border);
+}
+
+/* Centered message styles for errors/auth */
+.centeredMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-16) var(--spacing-8);
+}
+
+.errorIcon {
+  color: var(--error);
+  margin-bottom: var(--spacing-4);
+}
+
+.messageTitle {
+  font-size: var(--font-size-2xl);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.messageText {
+  font-size: var(--font-size-lg);
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-2);
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .dateFields {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+    gap: var(--spacing-2);
+  }
+
+  .footer > button {
+    width: 100%;
+  }
+}

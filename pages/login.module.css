@@ -1,0 +1,41 @@
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: var(--spacing-4);
+  direction: rtl;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 450px;
+  padding: var(--spacing-8) var(--spacing-6);
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  margin: 0 0 var(--spacing-3) 0;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-8);
+  font-size: 1rem;
+}
+
+.oauthButtons {
+  width: 100%;
+}

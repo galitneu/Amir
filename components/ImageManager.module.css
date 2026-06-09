@@ -1,0 +1,277 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.uploadSection, .gallerySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.subTitle {
+  font-family: var(--font-family-base);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.descriptionSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.descriptionLabel {
+  font-weight: 500;
+  color: var(--foreground);
+  font-size: 0.9rem;
+}
+
+.uploadButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-4);
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+}
+
+.selectedFilesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.selectedFilesTitle {
+  font-weight: 600;
+  color: var(--foreground);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.selectedFilesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.selectedFileCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  background-color: var(--background);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.fileHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.fileIcon {
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+.fileName {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--foreground);
+  word-break: break-word;
+}
+
+.fileDescriptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  width: 100%;
+}
+
+.fileDescription {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.uploadProgress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--muted);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width var(--animation-duration-fast) ease;
+}
+
+.progressText {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+.uploadError {
+  padding: var(--spacing-2);
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  border-left: 4px solid var(--error);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--error);
+}
+
+.uploadSuccess {
+  padding: var(--spacing-2);
+  background-color: color-mix(in srgb, var(--success) 10%, transparent);
+  border-left: 4px solid var(--success);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--success);
+  text-align: center;
+}
+
+.uploadAllButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-2);
+  border-top: 1px solid var(--border);
+}
+
+.emptyGallery {
+  color: var(--muted-foreground);
+  text-align: center;
+  padding: var(--spacing-8);
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+}
+
+.imageList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.imageCard {
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.imageInfo {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  flex-grow: 1;
+}
+
+.imageName {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  word-break: break-word;
+  margin-bottom: var(--spacing-1);
+}
+
+.imageDescriptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  flex-grow: 1;
+  margin-bottom: var(--spacing-2);
+}
+
+.imageDescription {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  word-break: break-word;
+}
+
+.imageDescriptionEn {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  word-break: break-word;
+  font-style: italic;
+}
+
+.imageActions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.editDescriptionSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  width: 100%;
+}
+
+.editDescriptionField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.editDescriptionLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.editActions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767px) {
+  .imageActions {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+  
+  .editActions {
+    justify-content: center;
+  }
+}

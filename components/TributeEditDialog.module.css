@@ -1,0 +1,45 @@
+.wideDialogContent {
+  max-width: min(90vw, 56rem); /* 896px on desktop, 90% on mobile */
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the dialog content scrolls properly */
+.wideDialogContent form {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: var(--spacing-2);
+  margin-right: calc(-1 * var(--spacing-2));
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .wideDialogContent {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: var(--spacing-2);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .wideDialogContent {
+    max-width: 85vw;
+  }
+}
+
+/* Improve form spacing for long content */
+.wideDialogContent .form-item {
+  margin-bottom: var(--spacing-4);
+}
+
+/* Ensure rich editor has adequate space */
+.wideDialogContent [data-component="tribute-rich-editor"] {
+  min-height: 300px;
+}

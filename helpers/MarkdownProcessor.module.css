@@ -1,0 +1,16 @@
+.container {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  white-space: pre-wrap; /* This helps preserve whitespace and line breaks from the source */
+  word-break: break-word;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-md) 0;
+  box-shadow: var(--shadow-md);
+  background-color: var(--muted); /* Placeholder color while loading */
+}

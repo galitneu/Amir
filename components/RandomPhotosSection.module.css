@@ -1,0 +1,261 @@
+.randomPhotosSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-6);
+  padding-top: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+  position: relative;
+  z-index: var(--z-content);
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.masonryGrid {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  column-count: 5;
+  column-gap: 12px;
+  padding: 0;
+  transition: column-count var(--animation-duration-normal) ease;
+}
+
+.masonryGrid[data-photo-count="6"] {
+  column-count: 3;
+}
+
+.masonryGrid[data-photo-count="8"] {
+  column-count: 4;
+}
+
+.masonryGrid[data-photo-count="9"] {
+  column-count: 4;
+}
+
+.masonryGrid[data-photo-count="12"] {
+  column-count: 4;
+}
+
+.masonryGrid[data-photo-count="16"] {
+  column-count: 5;
+}
+
+.masonryItem {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 12px;
+  break-inside: avoid;
+}
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masonryPhoto {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform var(--animation-duration-normal) ease, 
+              box-shadow var(--animation-duration-normal) ease;
+  box-shadow: var(--shadow);
+}
+
+.masonryPhoto:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.photoGalleryContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.noPhotosMessage {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-8);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.actionButton {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-6);
+}
+
+.actionButton a {
+  text-decoration: none;
+  font-family: var(--font-family-base);
+  background-color: #C49E6C !important;
+  color: white !important;
+  border-color: #C49E6C !important;
+}
+
+.actionButton a:hover {
+  background-color: #B8956A !important;
+  border-color: #B8956A !important;
+}
+
+.viewAllPhotosButton {
+  background-color: #3366cc !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  display: inline-block !important;
+  border: none !important;
+  text-decoration: none !important;
+  font-family: var(--font-family-base) !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.viewAllPhotosButton:hover {
+  background-color: #2955aa !important;
+}
+
+.lightboxContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+.lightboxCaption {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  color: var(--foreground);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.errorMessage {
+  background-color: var(--surface);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  padding: var(--spacing-6);
+  text-align: center;
+  color: var(--error);
+  font-family: var(--font-family-base);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive overrides for dynamic column count */
+@media (max-width: 1200px) {
+  .masonryGrid[data-photo-count="16"] {
+    column-count: 4;
+  }
+  
+  .masonryGrid[data-photo-count="12"] {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 1024px) {
+  .masonryGrid[data-photo-count="16"] {
+    column-count: 3;
+  }
+  
+  .masonryGrid[data-photo-count="12"] {
+    column-count: 3;
+  }
+  
+  .masonryGrid[data-photo-count="9"] {
+    column-count: 3;
+  }
+  
+  .masonryGrid[data-photo-count="8"] {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .randomPhotosSection {
+    margin-top: 20px;
+    padding-top: 0;
+    padding-left: var(--spacing-2);
+    padding-right: var(--spacing-2);
+  }
+
+  .photoGalleryContainer {
+    max-width: 100%;
+  }
+
+  .masonryGrid[data-photo-count="16"],
+  .masonryGrid[data-photo-count="12"],
+  .masonryGrid[data-photo-count="9"],
+  .masonryGrid[data-photo-count="8"] {
+    column-count: 2;
+  }
+  
+  .masonryGrid[data-photo-count="6"] {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonryGrid[data-photo-count="16"],
+  .masonryGrid[data-photo-count="12"],
+  .masonryGrid[data-photo-count="9"],
+  .masonryGrid[data-photo-count="8"] {
+    column-count: 2;
+  }
+  
+  .masonryGrid[data-photo-count="6"] {
+    column-count: 2;
+  }
+  
+  .masonryPhoto {
+    max-height: 150px;
+  }
+}

@@ -1,0 +1,397 @@
+.guestBookSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.guestBookSectionTitle {
+  color: var(--heading-color) !important;
+  font-family: var(--font-family-heading) !important;
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin-bottom: var(--spacing-6) !important;
+  padding-bottom: var(--spacing-2) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.guestBookDescription {
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-6);
+}
+
+.rtlText {
+  text-align: right;
+}
+
+.ltrText {
+  text-align: left;
+}
+
+.guestbookGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.guestbookCard {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow);
+  transition: transform var(--animation-duration-normal) ease, 
+              box-shadow var(--animation-duration-normal) ease;
+}
+
+.rtlCard {
+  text-align: right;
+  border-left: 4px solid var(--secondary);
+}
+
+.ltrCard {
+  text-align: left;
+  border-right: 4px solid var(--secondary);
+}
+
+.guestbookCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.clickableCard {
+  cursor: pointer;
+}
+
+.clickableCard:hover {
+  transform: translateY(-3px);
+}
+
+.guestbookHeader {
+  margin-bottom: var(--spacing-3);
+}
+
+.guestbookAuthor {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.guestbookRelationship {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.guestbookContentContainer {
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.guestbookContent {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.guestbookContentFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.8) 60%, var(--card) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.guestbookContentEllipsis {
+  background-color: var(--card);
+  padding: 0 var(--spacing-1) var(--spacing-3);
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.3rem;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.clickableEllipsis {
+  cursor: pointer;
+  transition: all var(--animation-duration-fast) ease;
+}
+
+.clickableEllipsis:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transform: scale(1.05);
+}
+
+.guestbookLoading {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.guestbookCardSkeleton {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  border-left: 4px solid var(--secondary);
+}
+
+.guestbookError {
+  background-color: var(--surface);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  padding: var(--spacing-6);
+  text-align: center;
+  color: var(--error);
+  font-family: var(--font-family-base);
+  margin-bottom: var(--spacing-6);
+}
+
+.noGuestbookMessage {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-8);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-6);
+}
+
+.actionButton {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-6);
+}
+
+.actionButton a {
+  text-decoration: none;
+  font-family: var(--font-family-base);
+  background-color: #C49E6C !important;
+  color: white !important;
+  border-color: #C49E6C !important;
+}
+
+.actionButton a:hover {
+  background-color: #B8956A !important;
+  border-color: #B8956A !important;
+}
+
+@media (max-width: 768px) {
+  .guestbookGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+  
+  .guestbookLoading {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+}
+
+.dialogTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.dialogRelationship {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-4);
+}
+
+.dialogContent {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: var(--spacing-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.rtlDialog {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtlDialog :global([data-slot="close"]) {
+  right: var(--spacing-4);
+  left: auto;
+}
+
+.ltrDialog {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Translation Dialog Styles */
+.translationDialog {
+  width: 100%;
+}
+
+.translationLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.translationLoadingText {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.translationError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--surface);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.translationErrorText {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  color: var(--error);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.retryButton {
+  font-size: 0.875rem;
+}
+
+.translationSuccess {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.translationLabel {
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  padding-bottom: var(--spacing-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.translationContent {
+  direction: ltr;
+  text-align: left;
+  border-left: 4px solid var(--secondary);
+  margin-bottom: 0;
+}
+
+.originalTextSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border);
+}
+
+.originalContent {
+  direction: rtl;
+  text-align: right;
+  border-right: 4px solid var(--muted);
+  border-left: none;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .guestbookCard {
+    padding: var(--spacing-3);
+  }
+  
+  .guestbookAuthor {
+    font-size: 1.125rem;
+  }
+  
+  .guestbookContent {
+    font-size: 0.9rem;
+  }
+  
+  .dialogContent {
+    font-size: 0.9rem;
+    max-height: 50vh;
+  }
+
+  .translationLoading {
+    padding: var(--spacing-4);
+  }
+
+  .translationLoadingText {
+    font-size: 0.9rem;
+  }
+
+  .translationLabel {
+    font-size: 0.9rem;
+  }
+
+  .translationContent,
+  .originalContent {
+    font-size: 0.85rem;
+    max-height: 40vh;
+  }
+}

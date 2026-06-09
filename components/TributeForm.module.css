@@ -1,0 +1,70 @@
+.container {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  margin: 0 auto;
+  direction: rtl;
+  text-align: right;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.subtitle {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a67c52;
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.form :global(.form-item) {
+  text-align: right;
+}
+
+.form :global(.form-label) {
+  text-align: right;
+  direction: rtl;
+  color: var(--heading-color);
+}
+
+.form :global(.form-control) {
+  direction: rtl;
+  text-align: right;
+}
+
+.form :global(.form-control input) {
+  text-align: right;
+  direction: rtl;
+}
+
+.form :global(.form-control textarea) {
+  text-align: right;
+  direction: rtl;
+}
+
+.form :global(.form-control select) {
+  text-align: right;
+  direction: rtl;
+}
+
+.submitButton {
+  margin-top: var(--spacing-4);
+  align-self: center;
+  min-width: 200px;
+}

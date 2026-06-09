@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.editorWrapper {
+  width: 100%;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabContent {
+  margin-top: var(--spacing-4);
+}
+
+.errorText {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-2);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border);
+}

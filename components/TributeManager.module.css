@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.tableContainer {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  background-color: var(--surface);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: flex-end;
+}
+
+.deleteButton:hover {
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 15%, transparent);
+}
+
+.featuredIcon {
+  color: var(--secondary);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--muted-foreground);
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-lg);
+}
+
+.dragHandle {
+  cursor: grab;
+  color: var(--muted-foreground);
+  text-align: center;
+  width: 40px;
+  padding: var(--spacing-2);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.orderCell {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-align: center;
+  min-width: 60px;
+}
+
+.dragging {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+}
+
+.dragging td {
+  border-bottom: none;
+}

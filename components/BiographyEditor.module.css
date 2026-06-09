@@ -1,0 +1,181 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.fieldArrayContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.sectionItem {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: flex-start;
+  background-color: var(--background);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.dragHandle {
+  padding-top: var(--spacing-8);
+  color: var(--muted-foreground);
+  cursor: grab;
+}
+
+.sectionFields {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.formGroup label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.errorText {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: var(--spacing-1);
+}
+
+.removeButton {
+  margin-top: var(--spacing-8);
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border);
+}
+
+/* Images Management Styles */
+.imagesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.imagePickerDialog {
+  max-width: 600px;
+  max-height: 80vh;
+}
+
+.imagePickerContainer {
+  margin-top: var(--spacing-4);
+}
+
+.imagesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-3);
+  background-color: var(--surface);
+}
+
+.imageItem {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  padding: var(--spacing-3);
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.imagePreview {
+  flex-shrink: 0;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.imageMetadata {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.imageField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.imageField label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.removeImageButton {
+  flex-shrink: 0;
+  margin-top: var(--spacing-2);
+}
+
+/* Language tabs styles */
+.languageTabs {
+  width: 100%;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.imageLanguageTabs {
+  width: 100%;
+}
+
+.imageTabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .imageItem {
+    flex-direction: column;
+  }
+  
+  .thumbnail {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  
+  .imagesHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-2);
+  }
+}

@@ -1,0 +1,287 @@
+.container {
+  font-family: var(--font-family-base);
+  background-color: var(--surface);
+  padding: var(--spacing-8) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 800px;
+  margin: var(--spacing-8) auto;
+  color: var(--foreground);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: var(--spacing-2);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--muted-foreground);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Messages Section */
+.messagesContainer {
+  margin-bottom: var(--spacing-8);
+}
+
+.messagesTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: var(--spacing-6);
+  text-align: center;
+}
+
+.messagesGrid {
+  display: grid;
+  gap: var(--spacing-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.messageCard {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--animation-duration-fast);
+}
+
+.messageCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-3);
+  gap: var(--spacing-2);
+}
+
+.messageAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.authorName {
+  font-weight: 600;
+  color: var(--heading-color);
+  font-size: var(--font-size-base);
+}
+
+.relationship {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.messageDate {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+.messageContent {
+  color: var(--foreground);
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
+  word-wrap: break-word;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+  gap: var(--spacing-4);
+}
+
+.emptyState p {
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
+  color: var(--error);
+  gap: var(--spacing-3);
+}
+
+.errorMessage p {
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
+/* Form Section */
+.formSection {
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-8);
+}
+
+.formTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: var(--spacing-6);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (max-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.inputGroup label {
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  color: var(--heading-color);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-3);
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  padding-right: calc(var(--spacing-3) + 18px + var(--spacing-2)); /* padding + icon width + gap */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  transition: border-color var(--animation-duration-fast), box-shadow var(--animation-duration-fast);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-focus);
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.8;
+}
+
+.errorMessage {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-1);
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--animation-duration-fast), transform var(--animation-duration-fast);
+  align-self: center;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--secondary) 90%, black);
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .messagesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .messageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+  
+  .messageDate {
+    font-size: 0.8125rem;
+  }
+}

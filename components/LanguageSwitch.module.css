@@ -1,0 +1,24 @@
+.switchButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color var(--animation-duration-fast) ease, color var(--animation-duration-fast) ease;
+}
+
+.switchButton:hover {
+  background-color: var(--muted);
+  color: var(--heading-color);
+}
+
+.switchButton span {
+  line-height: 1;
+}

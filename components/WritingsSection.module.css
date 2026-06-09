@@ -1,0 +1,263 @@
+.writingsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  text-align: right;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.writingsDescription {
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-6);
+  text-align: right;
+}
+
+.writingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.writingCard {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  text-align: right;
+  box-shadow: var(--shadow);
+  transition: transform var(--animation-duration-normal) ease, 
+              box-shadow var(--animation-duration-normal) ease;
+  border-left: 4px solid var(--secondary);
+  cursor: pointer;
+}
+
+.writingCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.writingHeader {
+  margin-bottom: var(--spacing-3);
+}
+
+.writingTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.writingContentContainer {
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.writingContent {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.writingContent p {
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.writingContent p:last-child {
+  margin-bottom: 0;
+}
+
+.writingContentFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.8) 60%, var(--card) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.writingContentEllipsis {
+  background-color: var(--card);
+  padding: 0 var(--spacing-1) var(--spacing-3);
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.3rem;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.writingImage {
+  margin-top: var(--spacing-3);
+  display: flex;
+  justify-content: center;
+}
+
+.writingImagePreview {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.writingLightboxContent {
+  direction: rtl;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.writingLightboxTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--spacing-6);
+  text-align: right;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: var(--spacing-2);
+}
+
+.writingLightboxText {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
+  color: var(--foreground);
+  margin-bottom: var(--spacing-6);
+  text-align: right;
+}
+
+.writingLightboxText p {
+  margin-bottom: var(--spacing-3);
+}
+
+.writingLightboxText p:last-child {
+  margin-bottom: 0;
+}
+
+.writingLightboxImage {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-6);
+}
+
+.writingLightboxImageFull {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.writingsLoading {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.writingCardSkeleton {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  text-align: right;
+  border-left: 4px solid var(--secondary);
+}
+
+.writingsError {
+  background-color: var(--surface);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  padding: var(--spacing-6);
+  text-align: center;
+  color: var(--error);
+  font-family: var(--font-family-base);
+  margin-bottom: var(--spacing-6);
+}
+
+.noWritingsMessage {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-8);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-6);
+}
+
+.actionButton {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-6);
+}
+
+.actionButton a {
+  text-decoration: none;
+  font-family: var(--font-family-base);
+  background-color: #C49E6C !important;
+  color: white !important;
+  border-color: #C49E6C !important;
+}
+
+.actionButton a:hover {
+  background-color: #B8956A !important;
+  border-color: #B8956A !important;
+}
+
+@media (max-width: 768px) {
+  .writingsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+  
+  .writingsLoading {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .writingCard {
+    padding: var(--spacing-3);
+  }
+  
+  .writingTitle {
+    font-size: 1.125rem;
+  }
+  
+  .writingContent {
+    font-size: 0.9rem;
+  }
+}

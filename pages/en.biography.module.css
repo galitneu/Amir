@@ -1,0 +1,233 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  direction: ltr;
+  font-family: var(--font-family-base);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-4) var(--spacing-8);
+  background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+}
+
+.mainTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  margin: 0 0 var(--spacing-3) 0;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.2;
+}
+
+.lifeDates {
+  font-family: var(--font-family-base);
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin: 0 0 var(--spacing-8) 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.station {
+  padding: var(--spacing-8) var(--spacing-6);
+  background-color: #FFFFFF;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+}
+
+.station:nth-child(even) {
+  background-color: #FAF9F6;
+}
+
+.stationAlternate {
+  background-color: #FAF9F6 !important;
+}
+
+.stationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gridReverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gridReverse .stationContent {
+  order: 2;
+}
+
+.gridReverse .stationImages {
+  order: 1;
+}
+
+.stationContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.stationTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: 1.3;
+}
+
+.stationDescription {
+  font-family: var(--font-family-base);
+  font-size: 1.125rem;
+  color: #444444;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.stationDescription :global(p) {
+  margin-bottom: var(--spacing-4);
+}
+
+.stationDescription :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.stationDescription :global(img) {
+  display: none; 
+}
+
+.stationImages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.stationImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: transform var(--animation-duration-normal) ease, box-shadow var(--animation-duration-normal) ease;
+}
+
+.stationImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.imageCaption {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: var(--spacing-2);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.lightboxImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.lightboxImage {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightboxCaption {
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.separator {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #E0E0E0 20%,
+    #E0E0E0 80%,
+    transparent
+  );
+  margin: var(--spacing-8) 0 0 0;
+  opacity: 0.6;
+}
+
+.errorState {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--error);
+  font-size: 1.125rem;
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--muted-foreground);
+  font-style: italic;
+  font-size: 1.125rem;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .stationGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .gridReverse .stationContent,
+  .gridReverse .stationImages {
+    order: initial;
+  }
+
+  .stationImages {
+    margin-top: var(--spacing-4);
+  }
+}
