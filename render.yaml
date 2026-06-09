@@ -1,0 +1,26 @@
+# Render.com Blueprint — deploys the memorial site with a managed PostgreSQL database.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# After the services are created you must load the data ONCE (see DEPLOY_he.md):
+#   psql "<EXTERNAL DATABASE URL>" < databasedump20260609.sql
+
+databases:
+  - name: amir-db
+    databaseName: amir
+    user: amir
+    plan: free
+
+services:
+  - type: web
+    name: amir-memorial
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: COMBINI_DATABASE_URL
+        fromDatabase:
+          name: amir-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
